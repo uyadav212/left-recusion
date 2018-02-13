@@ -1,14 +1,16 @@
 // Remove Left Recursion
 
-#include<stdio.h>
+#include<stdio.h>	//header files
 #include<stdlib.h>
 #include<string.h>
 
 #define NOP 10		//number of production
 #define SOP 50		//size of each production
-char pro[NOP][SOP],spro[2*NOP][SOP];
 
-int checkLR(int i)
+char pro[NOP][SOP];		//initial productions
+char spro[2*NOP][SOP];		//final solution production
+
+int checkLR(int i)		//check if left recusion exists
 {
 	int j;
 	char nt=pro[i][0];
@@ -18,7 +20,7 @@ int checkLR(int i)
 	return(0);
 }
 
-void resolveLR(int i, int j)
+void resolveLR(int i, int j)		//resolve left recursion
 {
 	int k,l=3,m=4;
 	char nt=pro[i][0];
